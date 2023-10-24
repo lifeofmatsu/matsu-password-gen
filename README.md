@@ -13,13 +13,13 @@ The purpose of this project is to provide a simple password generation tool usin
 3. style.css - contains css styling written by The Coding Bootcamp.
 
 ### Screenshot & URL
-Deployed Application: 
+Deployed Application: https://lifeofmatsu.github.io/matsu-password-gen/
 
 GitHub Repo: https://github.com/lifeofmatsu/matsu-password-gen.git
 
-![Pre-Generation Screen](<Screenshot 2023-10-23 224340.png>)
+![Screenshot 2023-10-23 224340](https://github.com/lifeofmatsu/matsu-password-gen/assets/22249488/735a12ef-f3e2-492f-ba08-08aa9de705c0)
 
-![Post-Generation Screen](<Screenshot 2023-10-23 224427.png>)
+![Screenshot 2023-10-23 224427](https://github.com/lifeofmatsu/matsu-password-gen/assets/22249488/097d426f-6422-41db-b91d-09bea92057f1)
 
 ## Credits
 The Coding Bootcamp (https://github.com/coding-boot-camp/friendly-parakeet.git)
