@@ -1,36 +1,41 @@
+//global temp variables
 var pwdLength = 0;
 var characterArray = [];
 
+//boolean variables
 var lowercaseInclusion = false;
 var uppercaseInclusion = false;
 var numericInclusion = false;
 var symbolicInclusion = false;
 
+//character set arrays
 var lowercaseGroup = 'abcdefghijklmnopqrstuvwxyz'.split('');
 var uppercaseGroup = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 var numericGroup = '0123456789'.split('');
-var symbolicGroup = '!()-.?[]_`~;:@#$%^&*+='.split(''); 
+var symbolicGroup = '!()-.?[]_`~;:@#$%^&*+='.split(''); //symbols selected per IBM password guidelines
 
 
+//generates password with randomized array indices
 function generatePassword() {
     passwordLength();
     characterSet();
 
     var tempPwd = '';
-    console.log(tempPwd);
+    // console.log(tempPwd);
     for (let i = 0; i < pwdLength; i++) {
         var tempChar = Math.floor(Math.random() * characterArray.length + 1); //generates a random integer between 0 and length of characterArray minus 1
         tempPwd += characterArray[tempChar]; //adds randomized index value of characterArray to temporary password variable
+        // console.log(tempPwd);
     }
 
-    console.log(tempPwd);
+    // console.log(tempPwd);
     return tempPwd;
 }
 
-//get references to the #generate element
+//get references to the #generate element. provided by The Coding Bootcamp at UCSD.
 var generateBtn = document.querySelector("#generate");
 
-//write password to the #password input
+//write password to the #password input. provided by The Coding Bootcamp at UCSD.
 function writePassword() {
     var password = generatePassword();
     var passwordText = document.querySelector("#password");
@@ -38,10 +43,12 @@ function writePassword() {
     passwordText.value = password;
 }
 
-//add event listener to generate button
+//add event listener to generate button. provided by The Coding Bootcamp at UCSD.
 generateBtn.addEventListener("click", writePassword);
 
 
+/* helper functions */
+//determine password length from user input
 function passwordLength() {
     pwdLength = Number(prompt('Enter a password length of 8 to 128 characters'));
 
@@ -52,9 +59,10 @@ function passwordLength() {
         alert('Confirming password length of ' + pwdLength + ' characters.');
     }
 
-    console.log(pwdLength);
+    // console.log(pwdLength);
 }
 
+//determine character set(s) to use in password from user input
 function characterSet() {
     lowercaseInclusion = confirm('Include lowercase characters in password?');
     uppercaseInclusion = confirm('Include uppercase characters in password?');
@@ -70,7 +78,9 @@ function characterSet() {
 
     if (symbolicInclusion) characterArray = characterArray.concat(symbolicGroup);
 
-    console.log(characterArray);
+    // console.log(characterArray);
+
+    //user feedback; throws error or confirms user choice(s)
     if (!lowercaseInclusion && !uppercaseInclusion && !numericInclusion && !symbolicInclusion) { //0000
         return 'Invalid entry. Please include one or more character types.'
     } else {
